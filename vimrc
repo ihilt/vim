@@ -30,8 +30,11 @@ set path+=**
 set incsearch
 set wrap
 set linebreak
+set breakindent
+set breakindentopt=shift:2
 set nolist
-set spell spelllang=en_us
+
+" set spell spelllang=en_us
 
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
