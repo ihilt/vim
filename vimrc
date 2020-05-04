@@ -3,10 +3,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'dracula/vim'
 call plug#end()
 
-colorscheme dracula
+colorscheme peachpuff
 
 filetype plugin indent on
 syntax on
@@ -26,18 +25,17 @@ set wildmenu
 set wildmode=list:longest
 set ttyfast
 set ruler
-set laststatus=2
+set laststatus=1
 set number
 set noundofile
 set path+=**
 set incsearch
+set hlsearch
 set wrap
 set linebreak
 set breakindent
 set breakindentopt=shift:2
 set nolist
-
-" set spell spelllang=en_us
 
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
@@ -50,6 +48,10 @@ set signcolumn=yes
 set updatetime=100
 set term=screen-256color
 set t_ut=
+set mouse=a
 
 autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ -std=c++11 -O2 -Wall '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype python nnoremap <F4> :w <bar> exec '!python3 '.shellescape('%')<CR>
+
+map <F2> :Files<CR>
+map <F3> :GFiles<CR>
