@@ -66,6 +66,10 @@ set t_ut=
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_user_caching=0
 
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
 autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ -std=c++11 -O2 -Wall '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype python nnoremap <F4> :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype php nnoremap <F4> :w <bar> exec '!php -f '.shellescape('%')<CR>
@@ -81,3 +85,5 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :Git diff<CR>
+nmap <leader>] <Plug>(GitGutterNextHunk)
+nmap <leader>[ <Plug>(GitGutterPrevHunk)
