@@ -2,3 +2,5 @@ autoload
 .netrwhist
 plugged
 pack
+tags
+undodir
