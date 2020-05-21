@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 "Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
