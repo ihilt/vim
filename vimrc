@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'git@github.com:ludovicchabant/vim-gutentags.git'
+Plug 'skywind3000/gutentags_plus'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jwalton512/vim-blade'
@@ -12,7 +13,7 @@ Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 "Plug 'ycm-core/YouCompleteMe'
-Plug 'ThePrimeagen/vim-be-good'
+"Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 "colorscheme peachpuff
@@ -59,6 +60,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 "let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let g:gutentags_modules=['ctags', 'gtags_cscope']
 let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_plus_switch = 1
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_user_caching=0
 let g:gitgutter_map_keys=0
@@ -88,6 +90,7 @@ nnoremap <leader>b :ls<CR>:b
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <c-n> :bn<CR>
 nnoremap <c-p> :bp<CR>
+nmap <leader>ph <Plug>(GitGutterPreviewHunk)
 nmap <leader>] <Plug>(GitGutterNextHunk)
 nmap <leader>[ <Plug>(GitGutterPrevHunk)
 nmap <leader>cs :cs find s <C-R>=expand("<cword>")<CR><CR>
